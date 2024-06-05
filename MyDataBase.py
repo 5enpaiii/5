@@ -68,5 +68,5 @@ def process_image(image_path):
     update_text_in_db(image_id, extracted_text)
     print(extracted_text)
 # Example usage:
-process_image('D:\Sen-core/5/13.jpg')
+process_image('D:\Sen-core/5/images/13.jpg')
 
