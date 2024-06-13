@@ -1,6 +1,7 @@
 import mysql.connector
+import cv2
+import numpy as np
 import easyocr
-import io
 
 # Initialize EasyOCR Reader
 reader = easyocr.Reader(['en'])
@@ -16,7 +17,7 @@ def insert_image_to_db(image_path):
         password='qwerty123',  # your MySQL password
         database='image_text_db'  # the database we created
     )
-
+    
     cursor = conn.cursor()
     cursor.execute("INSERT INTO image_text (img) VALUES (%s)", (img_data,))
     conn.commit()
@@ -68,5 +69,5 @@ def process_image(image_path):
     update_text_in_db(image_id, extracted_text)
     print(extracted_text)
 # Example usage:
-process_image('D:\Sen-core/5/images/13.jpg')
+process_image('D:\Sen-core/5/images/21.jfif')
 
